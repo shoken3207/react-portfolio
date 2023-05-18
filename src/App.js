@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import MobileMenu from './components/MobileMenu';
+import TopBar from './components/Topbar';
+import Form from './components/section/Form';
+import styled from 'styled-components';
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <SMainContaner>
+      <TopBar setIsOpen={setIsOpen} />
+      <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen} />
+      <Form />
+    </SMainContaner>
   );
 }
+
+const SMainContaner = styled.div`
+  width: 100%;
+`;
 
 export default App;
