@@ -38,13 +38,9 @@ const DetailProductCard = ({ product }) => {
             <h4>使用言語など</h4>
           </SDetalSectionTitle>
           <SSkillGroup>
-            {product.skills.map((skill, index) =>
-              index === 0 ? (
-                <span key={skill}>{skill}</span>
-              ) : (
-                <span key={skill}>, {skill}</span>
-              )
-            )}
+            {product.skills.map((skill) => (
+              <span key={skill}>{skill}</span>
+            ))}
           </SSkillGroup>
         </SDetalSection>
         <SDetalSection>
@@ -257,10 +253,12 @@ const SDesc = styled.p`
 
 const SSkillGroup = styled.div`
   padding-left: 1rem;
+  font-size: 0.8rem;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   flex-wrap: wrap;
+  column-gap: 0.4rem;
 `;
 
 const SLinkGroup = styled.div`
