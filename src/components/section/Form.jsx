@@ -3,66 +3,85 @@ import styled from 'styled-components';
 import SendIcon from '@mui/icons-material/Send';
 import ClearIcon from '@mui/icons-material/Clear';
 import { Button } from '@mui/material';
+import { init, send } from 'emailjs-com';
 
-const Form = () => {
+const Form = ({ id }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [concat, setConcat] = useState('');
+  const [message, setMessage] = useState('');
 
   const handleChange = (e, setFunc) => {
     e.preventDefault();
     setFunc(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const sendMail = (e) => {
     e.preventDefault();
-    console.log('submit');
-    if (!name || !email || !concat) return;
+    if (!name || !email || !message) return;
+    const userId = process.env.REACT_APP_USER_ID;
+    const serviceId = process.env.REACT_APP_SERVICE_ID;
+    const templateId = process.env.REACT_APP_TEMPLATE_ID;
+
+    if (!!userId && !!serviceId && !!templateId) {
+      init(userId);
+      const template_param = {
+        user_name: name,
+        user_email: email,
+        message,
+      };
+
+      send(serviceId, templateId, template_param).then(() => {
+        window.alert(
+          `下記の内容で送信いたしました。\n\n名前: ${name}\nemail: ${email}\nmessage: ${message}`
+        );
+        handleClear();
+      });
+    }
   };
 
   const handleClear = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
+    e?.preventDefault();
+    e?.stopPropagation();
     setName('');
     setEmail('');
-    setConcat('');
+    setMessage('');
   };
   return (
-    <SContainer>
+    <SContainer id={id}>
       <div></div>
       <SContent>
         <SSectionTitle>お問い合わせ</SSectionTitle>
         <SSectionDesc>
           このサイトについて質問や疑問点がありましたら、下記フォームをご利用ください。
         </SSectionDesc>
-        <SForm onSubmit={(e) => handleSubmit(e)}>
+        <SForm onSubmit={(e) => sendMail(e)}>
           <SInput
             onChange={(e) => handleChange(e, setName)}
             require
             type='text'
             placeholder='名前を入力'
-            vaule='aaa'
+            value={name}
           />
           <SInput
             onChange={(e) => handleChange(e, setEmail)}
             require
             type='email'
             placeholder='メールアドレスを入力'
-            vaule={email}
+            value={email}
           />
           <STextArea
-            onChange={(e) => handleChange(e, setConcat)}
+            onChange={(e) => handleChange(e, setMessage)}
             placeholder='問い合わせ内容を入力'
             require
             type='text'
             rows='8'
             cols='30'
-            vaule={concat}
+            value={message}
           />
           <SButtonGroup>
             <Button
               onClick={(e) => handleClear(e)}
-              disabled={!name && !email && !concat}
+              disabled={!name && !email && !message}
               variant='contained'
               color='error'
               size='large'
@@ -71,8 +90,8 @@ const Form = () => {
               取り消す
             </Button>
             <Button
-              onClick={(e) => handleSubmit(e)}
-              disabled={!name || !email || !concat}
+              type='submit'
+              disabled={!name || !email || !message}
               variant='contained'
               color='primary'
               size='large'
@@ -106,7 +125,7 @@ const SContent = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  row-gap: 2.8rem;
+  row-gap: 2.2rem;
 `;
 
 const SSectionTitle = styled.h2`
@@ -114,6 +133,7 @@ const SSectionTitle = styled.h2`
   color: #424242;
   text-align: center;
   font-size: 1.4rem;
+  font-family: 'Shippori Mincho B1', serif;
   font-weight: 550;
 `;
 
@@ -125,7 +145,7 @@ const SSectionDesc = styled.p`
 const SForm = styled.form`
   display: flex;
   flex-direction: column;
-  row-gap: 2rem;
+  row-gap: 1.7rem;
 `;
 
 const SInput = styled.input`
