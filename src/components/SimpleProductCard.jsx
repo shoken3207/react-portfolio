@@ -38,14 +38,32 @@ const SSimpleProductCard = styled.div`
     width: 100%;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0);
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: black;
+      opacity: 0;
+      transition: all 0.4s;
+    }
+
     > img {
       width: 100%;
-      transition: all 0.3s;
+      transition: all 0.4s;
     }
 
     &:hover {
       > img {
         transform: scale(1.2);
+      }
+
+      &::after {
+        opacity: 0.3;
       }
     }
   }

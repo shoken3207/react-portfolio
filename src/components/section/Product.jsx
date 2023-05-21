@@ -7,12 +7,11 @@ const Product = ({ id }) => {
     {
       title: '鹿児島の撮影スポット紹介サイト',
       images: [
-        'kagoshima-spot-site/1.jpg',
-        'kagoshima-spot-site/2.jpg',
-        'kagoshima-spot-site/3.jpg',
-        'kagoshima-spot-site/4.jpg',
-        'kagoshima-spot-site/5.jpg',
-        'kagoshima-spot-site/6.jpg',
+        'kagoshima-spot-site/1.png',
+        'kagoshima-spot-site/2.png',
+        'kagoshima-spot-site/3.png',
+        'kagoshima-spot-site/4.png',
+        'kagoshima-spot-site/5.png',
       ],
       desc: '私が実際に写真を撮りに行ってみて良かった場所を季節ごとにまとめました。',
       innovativePoints: [
@@ -42,14 +41,20 @@ const Product = ({ id }) => {
     {
       title: 'フォトコネ',
       images: [
-        'kagoshima-spot-site/1.jpg',
-        'kagoshima-spot-site/2.jpg',
-        'kagoshima-spot-site/3.jpg',
-        'kagoshima-spot-site/4.jpg',
-        'kagoshima-spot-site/5.jpg',
-        'kagoshima-spot-site/6.jpg',
+        'photo-connect/1.png',
+        'photo-connect/2.png',
+        'photo-connect/3.png',
+        'photo-connect/4.png',
+        'photo-connect/5.png',
+        'photo-connect/6.png',
+        'photo-connect/7.png',
+        'photo-connect/8.png',
+        'photo-connect/9.png',
+        'photo-connect/10.png',
+        'photo-connect/11.png',
+        'photo-connect/12.png',
       ],
-      desc: '撮影趣味の人が気軽に繋がれるアプリです。<br />プランを作成したり、他の人が作成したプランに参加したい出来ます。<br /><br />email: test@gmail.com<br />password: abcdefg<br />でログインできます。',
+      desc: '撮影趣味の人が気軽に繋がれるアプリです。<br />プランを作成したり、他の人が作成したプランに参加したり出来ます。<br /><br />email: test@gmail.com<br />password: abcdefg<br />でログインできます。',
       innovativePoints: [
         {
           outline: 'UI デザイン',
@@ -59,7 +64,7 @@ const Product = ({ id }) => {
         {
           outline: 'プラン',
           detail:
-            'プランの作成者には、募集の締め切りや参加者の強制退会など、多くの操作権限を持たせています。',
+            'プランの作成者には、募集の締め切りや参加者の強制退会、友達への招待など、多くの操作権限を持たせています。',
         },
         {
           outline: 'チャット',
@@ -69,7 +74,7 @@ const Product = ({ id }) => {
         {
           outline: '検索',
           detail:
-            '名前からユーザー、県やタグからプランを検索できるようにしました。また、プランに記述してある都道府県やタグをクリックまたは、タップすると自動で検索画面に遷移して検索結果が表示されます。',
+            '名前からユーザー、県やタグからプランを検索できるようにしました。また、プランに記述してある都道府県やタグをクリックすることで、自動で検索画面に遷移して検索結果が表示されるようにしました。',
         },
         {
           outline: '通知',
