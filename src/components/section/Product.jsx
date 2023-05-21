@@ -109,6 +109,34 @@ const Product = ({ id }) => {
       ],
       productLink: 'https://photo-connect-client.vercel.app',
     },
+    {
+      title: 'ポケモン図鑑',
+      images: [
+        'pokemon-ssg/1.png',
+        'pokemon-ssg/2.png',
+        'pokemon-ssg/3.png',
+        'pokemon-ssg/4.png',
+        'pokemon-ssg/5.png',
+        'pokemon-ssg/6.png',
+      ],
+      desc: 'Next.jsでSSGを体験したくて作成したアプリです。<br /><br />アピールポイントは、特にありません。',
+      innovativePoints: [
+        {
+          outline: 'UI デザイン',
+          detail:
+            'SSGを体験したかっただけなので、シンプルで何のひねりもないUIにしました。',
+        },
+      ],
+      skills: ['Next.js', 'styled-components', 'SSG'],
+      reference: '',
+      sourceLinks: [
+        {
+          name: '',
+          url: 'https://github.com/shoken3207/pokemon-ssg',
+        },
+      ],
+      productLink: 'https://pokemon-ssg-xi.vercel.app',
+    },
   ];
   return (
     <SProductContainer id={id}>
