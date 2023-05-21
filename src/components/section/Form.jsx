@@ -111,8 +111,8 @@ const SContainer = styled.div`
   height: 100vh;
   background-image: linear-gradient(
     90deg,
-    rgba(226, 207, 255, 1),
-    rgba(251, 253, 191, 1)
+    rgba(253, 219, 146, 1),
+    rgba(209, 253, 254, 1)
   );
   display: flex;
   justify-content: center;
