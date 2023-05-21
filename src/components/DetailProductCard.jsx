@@ -176,7 +176,7 @@ const SCardInfo = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  row-gap: 1.1rem;
+  row-gap: 1.5rem;
   @media screen and (min-width: 1000px) {
     width: 40%;
     height: 550px;
@@ -226,7 +226,7 @@ const SInnovativePoints = styled.ul`
 const SDetalSection = styled.div`
   display: flex;
   flex-direction: column;
-  row-gap: 0.4rem;
+  row-gap: 0.5rem;
 `;
 
 const SDetalSectionTitle = styled.div`
