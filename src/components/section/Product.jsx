@@ -137,6 +137,66 @@ const Product = ({ id }) => {
       ],
       productLink: 'https://pokemon-ssg-xi.vercel.app',
     },
+    {
+      title: 'ほんのいちにち',
+      images: [
+        'mti/1.png',
+        'mti/2.png',
+        'mti/3.png',
+        'mti/4.png',
+        'mti/5.png',
+        'mti/6.png',
+        'mti/7.png',
+        'mti/8.png',
+      ],
+      desc: '認知症予防を目的とした日記アプリです。<br /><br /> 基本機能として、日記の投稿、編集、削除が出来ます。<br /><br />株式会社MTIでの7日間インターンの最後に、チーム開発(5人)で作り上げました。<br /><br />userId: user1<br />password: 12345<br />でログインできます。',
+      innovativePoints: [
+        {
+          outline: 'UI デザイン',
+          detail:
+            '作業を分担して実装したため、統一感がない箇所もありますが、高齢者が読みやすいよう、大きめのフォントと、認知症に効果のある日記のテンプレートを用意しました。',
+        },
+        {
+          outline: 'カスタマイズ',
+          detail:
+            '日記を書く時だけではなく、閲覧するときにも価値を提供したいと考え、アプリ内のテーマカラーとフォントを指定できるようにしました。',
+        },
+        {
+          outline: 'ユーザビリティ',
+          detail:
+            'ローディングやスナックバーによるメッセージ表示、データ削除時の確認ダイアログなど、ユーザビリティを考慮しました。',
+        },
+        {
+          outline: '検索',
+          detail:
+            '年と月を選択することで、自分の日記を検索できるようにしました。',
+        },
+        {
+          outline: 'チーム開発',
+          detail:
+            '初めてのメンバーと限られた時間内でしたが、役割分担をして、積極的にコミュニケーションをとりながら、完成させることが出来ました。',
+        },
+      ],
+      skills: [
+        'Vue',
+        'Node.js',
+        'S3',
+        'Cloud9',
+        'Lambda',
+        'DynamoDB',
+        'CloudWatch',
+        'Vuetify',
+      ],
+      reference: '',
+      sourceLinks: [
+        {
+          name: '',
+          url: 'https://github.com/shoken3207/mti-intern',
+        },
+      ],
+      productLink:
+        'https://team-2-internship.s3.ap-northeast-1.amazonaws.com/index.html',
+    },
   ];
   return (
     <SProductContainer id={id}>
